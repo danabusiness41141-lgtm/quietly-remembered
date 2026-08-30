@@ -1,0 +1,127 @@
+# Quietly Remembered expansion
+
+- [x] Define a calmer multi-page information architecture and shared navigation.
+- [x] Add a home feed of anonymous notes with name search and empty states.
+- [x] Add dedicated rituals/about pages so the homepage is less crowded.
+- [x] Add paper color and font style controls with persistent local preferences.
+- [x] Keep the write flow accessible and available from every page.
+- [x] Verify routes, search filtering, personalization, mobile layout, and production build.
+- [x] Add English, Arabic, and Kurdish language switching with saved preference.
+- [x] Translate core pages and support natural RTL layout for Arabic and Kurdish.
+- [x] Verify translated copy, language persistence, search, forms, and mobile RTL rendering.
+- [x] Replace the Sorani Kurdish homepage opening headline with the user-provided phrasing.
+- [x] Make typewriter the only site font and remove alternate font controls.
+- [x] Add shared public note storage with recipient name, message, and paper color.
+- [x] Redesign public notes as torn-paper objects and persist each note's selected color.
+- [x] Add moderation-safe handling before exposing real user-submitted notes publicly.
+- [x] Replace the current typewriter typography with a refined, readable editorial font pairing.
+- [x] Preserve Arabic and Kurdish readability and RTL behavior with the new typography system.
+- [x] Verify the typography refinement across desktop, mobile, forms, notes, and production build.
+- [x] Audit the current implementation, runtime, tests, build, database, and public-facing flows.
+- [x] Document production gaps, risks, and a prioritized next-step roadmap.
+- [x] Prepare a full status report and reusable ChatGPT handoff prompt.
+- [x] Change approved-state behavior to immediate public posting while preserving external moderation removal.
+- [x] Add configurable server-side rate limiting and invisible honeypot protection for note creation.
+- [x] Add public-note reporting with open/reviewed/resolved states for external moderator review.
+- [x] Add secure hashed one-time delete/manage links and a confirmation-based manage route.
+- [x] Add ranked multilingual recipient search with cursor pagination and translated Load more behavior.
+- [x] Add optional scheduled publishing with UTC storage and a platform-managed callback; do not create live schedules before deployment.
+- [x] Add respectful anonymous reactions with privacy-conscious duplicate prevention.
+- [x] Add English, Arabic, and Sorani Kurdish copy for all new interactions and preserve RTL behavior.
+- [x] Expand focused tests for reports, token deletion, pagination/search, scheduling, and reactions.
+- [x] Keep live scheduled publishing jobs disabled until the user deploys and explicitly enables the production flag.
+- [x] Write an updated full change report covering the current checkpoint, architecture, features, safety controls, validation, and launch steps.
+- [x] Fix the homepage feed SQL ordering error caused by an invalid `ORDER BY 0` expression.
+- [x] Resolve the tRPC/API fallback that returns HTML instead of JSON after the feed query failure.
+- [x] Validate the homepage feed request, API response format, tests, and production build.
+- [x] Polish Home hero hierarchy, copy, spacing, artwork relationship, CTA, and mobile layout.
+- [x] Polish Home search, loading, error, empty, note-card, reaction, report, and Load more states.
+- [x] Verify Home in English, Arabic, and Sorani Kurdish RTL across desktop and narrow mobile.
+- [x] Run Home interaction checks, pnpm check, pnpm test, and pnpm build; document remaining visual concerns.
+- [x] Verify the polished Home page in English, Arabic, and Sorani Kurdish RTL on desktop and narrow mobile, and record evidence of each state.
+- [x] Exercise and verify Home interactions: search/clear, reaction state, report disclosure/submission feedback, Load more behavior, and error/empty states.
+- [x] Verify Arabic mobile RTL behavior through the shared mobile rules, direct Arabic browser rendering, and documented screenshot-session limitation.
+- [x] Validate reaction success and duplicate prevention through isolated behavior tests; avoid mutating real public notes in browser smoke tests.
+- [x] Validate report success and moderation receipt through isolated behavior tests; avoid creating a real moderation report during browser smoke tests.
+- [x] Re-run Load more and confirm additional notes append; document the collection-end state in the visual findings.
+- [x] Document that a true API failure was not induced against the running service; verify the Home error branch through code paths and passing tests instead.
+- [x] Add direct Home archive-state coverage for loading, error, populated, and empty rendering branches.
+- [x] Inspect the existing Write page and identify unfinished or generic details without changing Home.
+- [x] Polish Write page hierarchy, form fields, reassurance, paper selection, scheduling, and confirmation presentation.
+- [x] Verify Write page behavior in English, Arabic, and Sorani Kurdish RTL on desktop and mobile.
+- [x] Run focused interaction checks, pnpm check, pnpm test, and pnpm build; save and report the result.
+- [x] Confirm a full Write submission → confirmation → copy-link flow in a deployed staging environment; disposable staging note was immediately deleted after verification.
+- [x] Add localized English, Arabic, and Sorani Kurdish strings for Write guidance, field hints, paper hint, optional label, and copied-link feedback.
+- [x] Verify the Write page directly in English, Arabic RTL, and Sorani Kurdish RTL on desktop and narrow mobile with no English fallback in RTL states.
+- [x] Exercise paper swatch selection and schedule disclosure directly; validate submission, confirmation, and copy-link behavior through the existing mutation path and tests without creating live test content.
+- [x] Verify Write directly in English, Arabic RTL, and Sorani Kurdish RTL on narrow mobile with explicit evidence for each language; English, Arabic, and Sorani direct narrow-mobile captures are now recorded.
+- [x] Add focused client-side coverage for Write confirmation and copy-link feedback without creating live test content; Vitest now discovers and runs the TSX test.
+- [x] Correct the Sorani Kurdish About-page sentence to the user-provided wording: «لەبیرمە،خۆزگە لێرە دەبووی».
+- [x] Remove fabricated example messages from the public archive and preserve a truthful empty state until real notes exist.
+- [x] Make the anonymous “remembered” reaction one-way so a visitor cannot remove their reaction after liking a note.
+- [x] Verify fake-content removal, empty archive presentation, and irreversible reaction feedback across supported languages.
+- [x] Assess the connected Supabase project and choose the production-safe post/audio data model; selected the empty Quietly remembered project `ipxghtdcaucywmzsqifp`.
+- [x] Create Supabase tables, moderation fields, RLS policies, and an audio storage bucket without exposing private upload credentials.
+- [x] Migrate the app’s post and moderation reads/writes to Supabase while preserving anonymous management and moderation controls.
+- [x] Add compressed audio metadata/upload handling and click-to-play playback on remembrance cards.
+- [x] Add a restrained ambient light/visual control that never autoplays audio or disrupts accessibility.
+- [x] Verify Supabase moderation, deferred audio playback paths, privacy, RTL/mobile rendering, tests, and production build; a real audio upload/playback smoke test remains recommended before launch.
+- [x] Enforce browser-side WebM/Opus recompression, duration, source-size, compressed-size, format, and no-original-retention rules so Supabase storage stays bounded.
+- [x] Raise the user-facing/source audio allowance to 10 MB while keeping browser-compressed Supabase output capped at 2 MB.
+- [x] Update English, Arabic, and Sorani Kurdish audio error copy to explain the 10 MB source limit and 2 MB compressed storage result.
+- [x] Add focused coverage for rejecting source audio over the 10 MB intake limit.
+- [x] Make Lantern, Moon, Ember, and No light visibly distinct in the Write preview and on published remembrance cards.
+- [x] Verify ambient-light controls are functional, accessible, and readable on desktop/mobile and RTL layouts through responsive captures, type checks, and tests.
+- [x] Make public remembrance cards expandable into a larger focused reading state with an obvious close path.
+- [x] Preserve keyboard access, reduced-motion behavior, report/reaction controls, and explicit no-autoplay audio while cards expand.
+- [x] Verify expandable card behavior on desktop, mobile, and RTL layouts with focused tests.
+- [x] Superseded: retain ambient-light fields, controls, copy, and visual effects while adding custom paper colors.
+- [x] Superseded: add custom paper-color selection alongside the ambient choice, including a broader curated palette and persisted note color.
+- [x] Verify paper-color selection, audio controls, expandable cards, RTL/mobile layouts, tests, and production build after the palette and reaction update.
+- [x] Keep ambient-light functionality intact while adding a richer custom paper-color palette for each remembrance note.
+- [x] Localize the new paper-color names and verify they persist through note creation and archive display.
+- [x] Change the Sorani Kurdish remembered reaction label to «بەبیرهێنرایەوە».
+- [x] Restore reversible anonymous reactions while preserving duplicate-safe per-browser behavior and accurate add/remove counts.
+- [x] Verify the reaction toggle and localized label across desktop, mobile, and RTL states.
+- [x] Fix the selected named/custom paper color so the note card uses it instead of falling back to Warm parchment.
+- [x] Make note-card text, metadata, buttons, icons, and expand/report controls maintain accessible contrast on dark custom papers.
+- [x] Verify Soft lilac propagation and a dark custom color on the Write preview, archive cards, and mobile layout.
+- [x] Run a true staging-browser smoke test without overriding navigator.clipboard: submit a disposable note, confirm the success state, click Copy private link, and delete the note; native clipboard readback/paste was unavailable in the sandbox virtual display and is documented in CLIPBOARD_QA_REPORT.md.
+- [x] Add graceful clipboard write failure handling in Write.tsx with visible feedback and verify that path.
+- [x] Create a new dedicated Netlify site for Quietly Remembered without modifying the user’s existing Netlify project.
+- [x] Verify whether the full-stack Express/tRPC runtime can run on Netlify as-is; it cannot run as a plain static deploy, so no broken static-only copy was published.
+- [x] Perform an authorized, non-destructive cybersecurity review of the owned Quietly Remembered source, schema, dependencies, and preview headers.
+- [x] Write an educational cybersecurity report with confirmed findings, positive controls, learning guidance, remediation priorities, references, and deployment constraints.
+- [x] Create a separate Netlify site named quietly-remembered without modifying the existing zesty-scone-8b97b7 site.
+- [x] Decide whether to migrate the full-stack Express/tRPC runtime to Netlify Functions before deploying; chose compatible built-in WebDev hosting as the no-additional-cost path and left the separate Netlify site unused.
+- [x] Choose and document the best no-additional-cost hosting path that preserves the full-stack API, Supabase access, audio signing, moderation, and scheduled routes; recommendation recorded in CYBERSECURITY_REVIEW.md.
+- [x] Migrate the full-stack API/runtime to Netlify-compatible serverless functions for the separate quietly-remembered site.
+- [x] Configure the required server-side environment variables on the separate Netlify site without exposing secrets.
+- [x] Verify core note, moderation, reaction, audio, scheduled-route, and SPA navigation behavior on the Netlify deployment through non-destructive live API guards and SPA route checks; no live note or audio content was created.
+- [x] Resume deployment only on the separate quietly-remembered Netlify site under a no-upgrade, no-purchase, no-payment guardrail.
+- [x] Verify the corrected live Netlify Function and public frontend without creating live user content or changing the existing Netlify project.
+- [x] Make unauthenticated scheduled-publish requests return a clean forbidden response instead of a 500 error, then redeploy and recheck the route guard.
+- [x] Disposable Netlify smoke test delegated to the user after the agent verified the public feed, reaction add/unlike count behavior, report confirmation, and targeted QA-note deletion.
+- [x] Disposable Netlify audio smoke test delegated to the user; the implementation and existing automated audio coverage remain intact.
+- [x] Superseded: public moderation queue removed; reports are retained in Supabase for direct owner review.
+- [x] Remove the public moderation page and route while preserving Supabase report storage and submission.
+- [x] Fix reaction unlike behavior so the visible reaction count decrements immediately and remains correct after refresh.
+- [x] Replace the requested Sorani Kurdish homepage and footer copy with the user-provided wording.
+- [x] Leave disposable live note/audio QA for manual user verification; do not spend additional agent time on browser-driven test content.
+- [x] Creators page request cancelled at the user's request; no page shipped.
+- [x] Creators page request cancelled at the user's request; no social links shipped.
+- [x] Creators page request cancelled at the user's request; no route shipped.
+- [x] Creators page work cancelled at the user's request; do not ship or continue it.
+- [x] Confirmed the authenticated GitHub target as `danabusiness41141-lgtm` and the repository name as `quietly-remembered`.
+- [ ] Export the current Quietly Remembered project to the confirmed GitHub repository.
+- [ ] Connect only `quietly-remembered.netlify.app` to that GitHub repository with automatic deploys enabled.
+- [x] Confirmed the authenticated GitHub target as `danabusiness41141-lgtm` and the repository name as `quietly-remembered`.
+- [x] Create the private `quietly-remembered` repository and push the stable project baseline; later uploaded-project changes still need to be pushed.
+- [ ] Connect only `quietly-remembered.netlify.app` to the new GitHub repository with automatic deploys enabled.
+- [ ] Verify the GitHub repository privacy and Netlify build settings without modifying the existing Netlify project.
+- [x] Inspect the uploaded project ZIP and preserve its current Creators page implementation.
+- [x] Fix the Sorani Kurdish and Arabic translations on the current Creators page.
+- [x] Add direct test evidence for the finalized Arabic and Sorani Creators-page render content.
+- [x] Restore the book artwork at the top of the homepage.
+- [x] Run tests, type checking, production build, and visual verification for the focused fixes.
+- [ ] Review broader Sorani Kurdish and Arabic copy outside the Creators page in a separate localization pass.

@@ -1,0 +1,2 @@
+ALTER TABLE `remembranceNotes` MODIFY COLUMN `status` enum('pending','published','deleted') NOT NULL DEFAULT 'published';--> statement-breakpoint
+ALTER TABLE `remembranceNotes` MODIFY COLUMN `manageTokenHash` varchar(128);

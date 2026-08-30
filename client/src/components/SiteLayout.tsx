@@ -1,0 +1,10 @@
+/* Paper Lantern direction: shared editorial shell with language switching that respects Arabic and Sorani Kurdish RTL reading flow. */
+import { Link, useLocation } from "wouter";
+import { ArrowUpRight, Feather } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+
+export default function SiteLayout({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation(); const { language, setLanguage, t } = useLanguage();
+  const isActive = (path: string) => location === path;
+  return <main className="site-shell"><div className="paper-grain" aria-hidden="true" /><header className="site-header container"><Link href="/" className="brand" aria-label="Quietly Remembered home"><span className="brand-mark"><span className="brand-glow" /><span className="brand-thread" /><span className="brand-star">✦</span></span><span className="brand-name">quietly remembered</span></Link><nav className="header-nav" aria-label="Main navigation"><Link href="/rituals" className={isActive("/rituals") ? "active" : ""}>{t.smallRituals}</Link><Link href="/about" className={isActive("/about") ? "active" : ""}>{t.about}</Link><Link href="/creators" className={isActive("/creators") ? "active" : ""}>{t.creators}</Link><Link href="/customize" className={isActive("/customize") ? "active" : ""}>{t.customize}</Link><div className="language-switcher" aria-label={String(t.language)}>{([['en','EN'],['ar','ع'],['ku','کوردی']] as const).map(([code,label]) => <button key={code} className={language === code ? "selected" : ""} onClick={() => setLanguage(code)}>{label}</button>)}</div><Link href="/write" className="nav-cta">{t.write} <ArrowUpRight size={15} /></Link></nav></header>{children}<footer className="site-footer container"><Link href="/" className="brand"><span className="brand-mark"><span className="brand-glow" /><span className="brand-thread" /><span className="brand-star">✦</span></span><span className="brand-name">quietly remembered</span></Link><span>{t.footer}</span><Link href="/write">{t.write} <Feather size={13} /></Link></footer></main>;
+}

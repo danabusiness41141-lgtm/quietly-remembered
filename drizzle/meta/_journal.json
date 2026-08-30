@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787762124378,
+      "tag": "0000_red_eternity",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787782521423,
+      "tag": "0001_thick_captain_stacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787782547574,
+      "tag": "0002_noisy_abomination",
+      "breakpoints": true
+    }
+  ]
+}

@@ -127,9 +127,11 @@ export default function Creators() {
             <p>{t.intro}</p>
             <div className="creators-protocol"><span className="protocol-dot" />{t.protocol}</div>
           </div>
-          <div className="creators-art">
-            <img src="/creators-art.png" alt="" />
-            <span className="creators-art-caption">Anonymous by design. <Sparkles size={14} /></span>
+          <div className="creators-orb" aria-hidden="true">
+            <div className="orb-ring orb-ring-one" />
+            <div className="orb-ring orb-ring-two" />
+            <div className="orb-core"><Sparkles size={24} /></div>
+            <span className="orb-label">NTKRD<br /><b>01—03</b></span>
           </div>
         </div>
 

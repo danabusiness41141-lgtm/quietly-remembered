@@ -56,10 +56,4 @@ describe("Creators page", () => {
     expect(html).toContain("Kurdistan, Iraq");
   });
 
-  it("renders the decorative art image in the hero", () => {
-    const html = renderToStaticMarkup(<Creators />);
-
-    expect(html).toContain("/creators-art.png");
-    expect(html).toContain("Anonymous by design");
-  });
 });

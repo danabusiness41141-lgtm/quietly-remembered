@@ -172,7 +172,7 @@ export default function Home() {
         <Link href="/write" className="button">{t.leave} <ArrowUpRight size={15} /></Link>
       </div>
       <div className="home-intro-art">
-        <img src="/manus-storage/quietly-remembered-memory-card_d711dd2b.png" alt="" />
+        <img src="/quietly-remembered-memory-card.png" alt="" />
         <span>{t.anonymous} <Sparkles size={14} /></span>
       </div>
     </section>

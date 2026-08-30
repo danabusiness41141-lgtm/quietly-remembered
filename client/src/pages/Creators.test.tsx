@@ -21,7 +21,7 @@ describe("Creators page", () => {
     expect(html).toContain("Dana Gailan");
     expect(html).toContain("Amad Shekha");
     expect(html).toContain("Hazim Ali");
-    expect(html).toContain("We are trying to create a community where everything is free and useful.");
+    expect(html).toContain("We strive to build a community where everything is free and meaningful.");
   });
 
   it("keeps the supplied Telegram and Instagram links as external destinations", () => {

@@ -564,3 +564,66 @@ html[dir="rtl"] .creators-page .creators-hero-copy,.html[dir="rtl"] .creators-pa
 html[dir="rtl"] .creators-page .creators-back span { transform:rotate(180deg); }
 html[dir="rtl"] .creators-page .creators-social-link:hover { transform:translateX(-5px); }
 html[dir="rtl"] .creators-page .mission-heart span { text-align:left; }
+
+/* Comprehensive mobile polish: tighter spacing, better nav, readable type. */
+@media (max-width:800px) {
+  .site-header { padding:0 4%; gap:8px; }
+  .header-nav { gap:8px; font-size:11px; }
+  .header-nav a:nth-child(-n+3) { display:none; }
+  .language-switcher { padding-left:8px; gap:2px; }
+  .language-switcher button { padding:3px 4px; font-size:9px; }
+  .home-intro { padding:40px 5% 50px; min-height:auto; }
+  .home-intro h1 { font-size:clamp(38px,11vw,60px); max-width:100%; }
+  .home-intro-copy>p { max-width:100%; font-size:14px; }
+  .home-intro-art { height:220px; }
+  .home-intro-art img { width:160px; }
+  .feed-section { padding:50px 5% 70px; }
+  .feed-toolbar { gap:16px; }
+  .feed-toolbar h2 { font-size:34px; margin-top:10px; }
+  .search-box { width:100%; }
+  .feed-grid { gap:18px; }
+  .memory-note { min-height:180px; padding:28px 22px 22px; }
+  .memory-note p { font-size:17px; }
+  .home-invitation { padding:60px 5%; }
+  .invitation-inner { padding-left:8%; }
+  .invitation-inner h2 { font-size:34px; }
+  .write-page { padding:28px 5% 80px; }
+  .write-page .back-link { margin-bottom:30px; }
+  .write-page-copy h1 { font-size:clamp(42px,13vw,62px); }
+  .write-card { margin:28px auto 0; padding:32px 22px 28px; max-width:100%; }
+  .write-card::before { inset:6px; }
+  .form-footer { flex-direction:column; align-items:stretch; gap:14px; }
+  .form-footer .button { min-width:0; width:100%; justify-content:center; }
+  .subpage-heading { padding:60px 5% 40px; }
+  .subpage-heading h1 { font-size:44px; }
+  .about-layout { padding:60px 5% 0; }
+  .ritual-list article { padding:24px 3%; }
+  .customize-panel { margin:12px 5% 0; padding:30px 6%; }
+  .paper-swatch { flex:1 1 calc(50% - 10px); }
+  .notes-section { padding:60px 5%; }
+  .notes-header { margin-bottom:32px; }
+  .notes-grid { gap:18px; padding:0; }
+  .site-footer { padding:16px 5%; min-height:auto; }
+}
+@media (max-width:480px) {
+  .container { width:min(100% - 28px, 480px); }
+  .home-intro { padding:32px 4% 40px; }
+  .home-intro h1 { font-size:clamp(34px,10vw,52px); }
+  .home-intro-art { height:180px; }
+  .home-intro-art img { width:130px; }
+  .feed-section { padding:40px 4% 56px; }
+  .feed-toolbar h2 { font-size:30px; }
+  .memory-note { min-height:160px; padding:24px 18px 20px; }
+  .write-page { padding:20px 4% 64px; }
+  .write-page-copy h1 { font-size:clamp(38px,12vw,56px); }
+  .write-card { padding:28px 18px 24px; }
+  .letter-card { padding:32px 22px 28px; transform:rotate(.3deg); }
+  .creators-hero { padding:50px 5% 36px; }
+  .creators-hero h1 { font-size:clamp(36px,12vw,58px); }
+  .creators-people { padding:50px 5% 60px; }
+  .creators-section-head h2 { font-size:32px; }
+  .creators-mission { margin:0 5% 60px; padding:28px 0 32px; }
+  .mission-copy h2 { font-size:36px; }
+  .creators-connect { padding:0 5% 48px; }
+  .creators-footer-row { padding:18px 0 0; font-size:8px; }
+}

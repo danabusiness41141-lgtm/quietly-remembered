@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, Feather, Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import QuietLogo from "./QuietLogo";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -25,11 +26,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
       <header className="site-header container">
         <Link href="/" className="brand" aria-label="Quietly Remembered home">
-          <span className="brand-mark">
-            <span className="brand-glow" />
-            <span className="brand-thread" />
-            <span className="brand-star">✦</span>
-          </span>
+          <QuietLogo size={34} />
           <span className="brand-name">quietly remembered</span>
         </Link>
 
@@ -60,11 +57,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <aside className={`mobile-sidebar ${mobileOpen ? "open" : ""}`} aria-label="Mobile navigation">
         <div className="mobile-sidebar-header">
           <Link href="/" className="brand" aria-label="Quietly Remembered home">
-            <span className="brand-mark">
-              <span className="brand-glow" />
-              <span className="brand-thread" />
-              <span className="brand-star">✦</span>
-            </span>
+            <QuietLogo size={30} />
             <span className="brand-name">quietly remembered</span>
           </Link>
           <button className="mobile-close-btn" onClick={() => setMobileOpen(false)} aria-label="Close menu">
@@ -97,11 +90,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
       <footer className="site-footer container">
         <Link href="/" className="brand">
-          <span className="brand-mark">
-            <span className="brand-glow" />
-            <span className="brand-thread" />
-            <span className="brand-star">✦</span>
-          </span>
+          <QuietLogo size={28} />
           <span className="brand-name">quietly remembered</span>
         </Link>
         <span>{t.footer}</span>
